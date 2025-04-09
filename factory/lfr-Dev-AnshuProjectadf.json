@@ -1,0 +1,9 @@
+{
+	"name": "lfr-Dev-AnshuProjectadf",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9db460a8-deb7-4157-86a7-44682bc44741",
+		"tenantId": "fd97d3c9-a8a6-4e28-b666-34320c13cbb4"
+	}
+}
