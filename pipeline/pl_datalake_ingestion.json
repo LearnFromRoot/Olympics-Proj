@@ -50,7 +50,7 @@
 					},
 					"activities": [
 						{
-							"name": "Writing nocs csv file availability",
+							"name": "Writing nocs csv file",
 							"type": "IfCondition",
 							"dependsOn": [],
 							"userProperties": [],
