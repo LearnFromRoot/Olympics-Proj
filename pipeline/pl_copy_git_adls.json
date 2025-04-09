@@ -86,7 +86,8 @@
 					"dataset": {
 						"referenceName": "ds_bronze_config_json",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			}
 		],
