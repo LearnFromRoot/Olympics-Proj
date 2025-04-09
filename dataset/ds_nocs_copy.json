@@ -1,0 +1,32 @@
+{
+	"name": "ds_nocs_copy",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_source_adlsgen2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"ds_nocs_container": {
+				"type": "string"
+			},
+			"ds_nocs_folder": {
+				"type": "string"
+			},
+			"ds_nocs_file": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
