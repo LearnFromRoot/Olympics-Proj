@@ -95,7 +95,8 @@
 										"linkedServiceName": {
 											"referenceName": "ls_log_files",
 											"type": "LinkedServiceReference"
-										}
+										},
+										"path": "logs"
 									}
 								},
 								"translator": {
