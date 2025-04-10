@@ -418,48 +418,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/pl_meridian_arch')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "print List",
-						"type": "SetVariable",
-						"dependsOn": [],
-						"policy": {
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"variableName": "activity_list",
-							"value": "[[1,2,3,4,5,6,7,8,9]"
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"parameters": {
-					"pl_param_varList": {
-						"type": "array"
-					},
-					"pl_param_varItem": {
-						"type": "string"
-					}
-				},
-				"variables": {
-					"activity_list": {
-						"type": "String"
-					}
-				},
-				"annotations": [],
-				"lastPublishTime": "2025-04-09T10:15:55Z"
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/DelimitedText1')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
