@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "lfr-Dev-AnshuProjectadf"
+		},
+		"ls_log_files_connectionString": {
+			"value": ""
+		},
+		"ls_source_adlsgen2_accountKey": {
+			"value": ""
+		},
+		"ls_source_adlsgen2_properties_typeProperties_url": {
+			"value": "https://lfranshuproject.dfs.core.windows.net/"
+		},
+		"ls_source_http_git_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
