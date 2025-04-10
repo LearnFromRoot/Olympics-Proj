@@ -59,6 +59,21 @@
 									"value": "@and(equals(item().name,'nocs.csv'),equals(item().type,'File'))",
 									"type": "Expression"
 								},
+								"ifFalseActivities": [
+									{
+										"name": "Append wrong files",
+										"type": "AppendVariable",
+										"dependsOn": [],
+										"userProperties": [],
+										"typeProperties": {
+											"variableName": "pl_var_falseFiles",
+											"value": {
+												"value": "@item().name",
+												"type": "Expression"
+											}
+										}
+									}
+								],
 								"ifTrueActivities": [
 									{
 										"name": "Copy nocs csv file",
@@ -139,8 +154,67 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "Set variable for wrong file names",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Validate nocs file availability",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "pl_var_falseFilesString",
+					"value": {
+						"value": "@string(variables('pl_var_falseFiles'))",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Set variable for wrong file count",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Validate nocs file availability",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "pl_var_falseFiles_count",
+					"value": {
+						"value": "@length(variables('pl_var_falseFiles'))",
+						"type": "Expression"
+					}
+				}
 			}
 		],
+		"variables": {
+			"pl_var_falseFiles": {
+				"type": "Array"
+			},
+			"pl_var_falseFilesString": {
+				"type": "String"
+			},
+			"pl_var_falseFiles_count": {
+				"type": "Integer"
+			}
+		},
 		"annotations": []
 	}
 }
